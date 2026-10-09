@@ -1,0 +1,14 @@
+/* 遮罩层加深 + 不透 */
+.el-overlay {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  opacity: 1 !important;
+}
+
+/* 弹窗白底 */
+.preview-dialog,
+.preview-dialog .el-dialog__header,
+.preview-dialog .el-dialog__body,
+.preview-dialog .el-dialog__footer {
+  background-color: #fff !important;
+  opacity: 1 !important;
+}

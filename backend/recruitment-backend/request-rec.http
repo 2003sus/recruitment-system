@@ -1,0 +1,78 @@
+### 1. 查列表（看看现在有什么）
+GET http://localhost:8080/api/recruitment/list
+
+### 2. 新增一个
+POST http://localhost:8080/api/recruitment
+Content-Type: application/json
+
+{
+  "jobName": "一线销售",
+  "candidateName": "张三",
+  "mobile": "13800138000",
+  "interviewerName": "李经理",
+  "passed": "待确认",
+  "hired": "待确认"
+}
+
+### 3. 查列表（确认新增成功）
+GET http://localhost:8080/api/recruitment/list
+
+### 4. 按 ID 查
+GET http://localhost:8080/api/recruitment/2
+
+### 5. 删除
+DELETE http://localhost:8080/api/recruitment/2
+
+### 6. 查列表（确认删掉了）
+GET http://localhost:8080/api/recruitment/list
+
+### 7. 新增（重复手机号，应该报错）
+POST http://localhost:8080/api/recruitment
+Content-Type: application/json
+
+{
+  "jobName": "二线销售",
+  "candidateName": "李四",
+  "mobile": "13800138000",
+  "interviewerName": "王经理",
+  "passed": "待确认",
+  "hired": "待确认"
+}
+
+### 8. 新增（必填为空，应该报错）
+POST http://localhost:8080/api/recruitment
+Content-Type: application/json
+
+{
+  "jobName": "",
+  "candidateName": "",
+  "mobile": "",
+  "interviewerName": "",
+  "passed": "待确认",
+  "hired": "待确认"
+}
+
+### 9. 查不存在的 ID
+GET http://localhost:8080/api/recruitment/9999
+
+### 10. 按姓名筛选
+GET http://localhost:8080/api/recruitment/list?name=张
+
+### 11. 按手机号筛选
+GET http://localhost:8080/api/recruitment/list?mobile=138
+
+### 12. 按岗位筛选
+GET http://localhost:8080/api/recruitment/list?jobName=销售
+
+### 13. 更新（改通过）
+PUT http://localhost:8080/api/recruitment/1
+Content-Type: application/json
+
+{
+  "jobName": "一线销售",
+  "candidateName": "张三",
+  "mobile": "13800138000",
+  "interviewerName": "李经理",
+  "passed": "是",
+  "hired": "待确认"
+}

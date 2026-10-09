@@ -1,0 +1,104 @@
+/* ============================================================
+   全局主题：统一圆角 / 颜色 / 间距
+   ============================================================ */
+
+:root {
+  --app-radius-sm: 6px;    /* tag */
+  --app-radius: 8px;       /* 按钮、输入框、选择框、表格外框 */
+  --app-radius-lg: 12px;   /* 卡片、弹窗 */
+}
+
+/* ---------- 按钮 ---------- */
+.el-button {
+  border-radius: var(--app-radius) !important;
+}
+.el-button.is-round {
+  border-radius: 999px !important;
+}
+.el-button--small {
+  border-radius: var(--app-radius) !important;
+}
+.el-button--large {
+  border-radius: var(--app-radius) !important;
+}
+
+/* ---------- 输入框 / 选择框 / 日期框 ---------- */
+.el-input__wrapper,
+.el-textarea__inner,
+.el-select__wrapper,
+.el-date-editor .el-input__wrapper,
+.el-input-number,
+.el-input-number__decrease,
+.el-input-number__increase {
+  border-radius: var(--app-radius) !important;
+}
+
+/* 输入框聚焦时不要变回默认 */
+.el-input__wrapper.is-focus,
+.el-select__wrapper.is-focused {
+  border-radius: var(--app-radius) !important;
+}
+
+/* ---------- 卡片 ---------- */
+.el-card {
+  border-radius: var(--app-radius-lg) !important;
+}
+
+/* ---------- 弹窗 ---------- */
+.el-dialog {
+  border-radius: var(--app-radius-lg) !important;
+}
+.el-message-box {
+  border-radius: var(--app-radius-lg) !important;
+}
+.el-drawer {
+  border-radius: var(--app-radius-lg) 0 0 var(--app-radius-lg) !important;
+}
+
+/* ---------- 表格外框圆角（单元格保持直角） ---------- */
+.el-table {
+  border-radius: var(--app-radius) !important;
+  overflow: hidden;
+}
+.el-table__inner-wrapper::before {
+  display: none; /* 去掉底部那条 1px 线 */
+}
+.el-table--border {
+  border-radius: var(--app-radius) !important;
+  overflow: hidden;
+}
+
+/* ---------- 分页 ---------- */
+.el-pagination .btn-prev,
+.el-pagination .btn-next,
+.el-pagination .el-pager li {
+  border-radius: var(--app-radius) !important;
+}
+
+/* ---------- Tag ---------- */
+.el-tag {
+  border-radius: var(--app-radius-sm) !important;
+}
+
+/* ---------- 下拉菜单 ---------- */
+.el-select-dropdown,
+.el-popper.is-light {
+  border-radius: var(--app-radius) !important;
+}
+
+/* ---------- 下拉项 hover ---------- */
+.el-select-dropdown__item {
+  border-radius: var(--app-radius-sm) !important;
+  margin: 0 4px !important;
+}
+
+/* ---------- 上传按钮 ---------- */
+.el-upload--text,
+.el-upload-dragger {
+  border-radius: var(--app-radius) !important;
+}
+
+/* ---------- 日期选择面板 ---------- */
+.el-picker-panel {
+  border-radius: var(--app-radius-lg) !important;
+}
